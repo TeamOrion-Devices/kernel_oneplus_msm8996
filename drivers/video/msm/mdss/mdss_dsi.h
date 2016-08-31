@@ -524,7 +524,7 @@ struct mdss_dsi_ctrl_pdata {
 	struct mdss_dsi_debugfs_info *debugfs_info;
 
 	struct dsi_err_container err_cont;
-
+	int  SRGB_mode;
 
 	bool ds_registered;
 
@@ -652,6 +652,8 @@ void mdss_dsi_dsc_config(struct mdss_dsi_ctrl_pdata *ctrl,
 	struct dsc_desc *dsc);
 void mdss_dsi_dfps_config_8996(struct mdss_dsi_ctrl_pdata *ctrl);
 void mdss_dsi_set_burst_mode(struct mdss_dsi_ctrl_pdata *ctrl);
+void mdss_dsi_panel_set_srgb_mode(struct mdss_dsi_ctrl_pdata *ctrl, int level);
+int mdss_dsi_panel_get_srgb_mode(struct mdss_dsi_ctrl_pdata *ctrl);
 
 static inline const char *__mdss_dsi_pm_name(enum dsi_pm_type module)
 {
